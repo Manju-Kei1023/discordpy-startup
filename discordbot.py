@@ -17,8 +17,8 @@ async def on_command_error(ctx, error):
 
 
 @bot.command()
-async def say(ctx, arg):
-    await ctx.send(arg)
+async def say(ctx, *args):
+    await ctx.send('{} arguments: {}'.format(len(args), ', '.join(args)))
 
 
 bot.run(token)
