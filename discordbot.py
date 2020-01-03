@@ -1,22 +1,21 @@
-import discord
-
-client = discord.Client()
+from discord.ext import commands
 import os
 import traceback
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
-@client.event
-async def on_ready():
-    print('We have logged in as {0.user}'.format(client))
 
-@client.event
-async def on_message(message):
-    if message.author == client.user:
-        return
+@bot.event
+async def on_command_error(ctx, error):
+    orig_error = getattr(error, "original", error)
+    error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
+    await ctx.send(error_msg)
 
-    if message.content.startswith('$hello'):
-        await message.channel.send('Hello!')
 
-client.run(token)
+@bot.command()
+async def ping(ctx):
+    await ctx.send('pong')
+
+
+bot.run(token)
