@@ -23,12 +23,11 @@ async def on_command_error(ctx, error):
 
 @bot.command()
 async def say(ctx, *args):
-    await ctx.send('にゃーん')
     await ctx.send('{}'.format(' '.join(args)))
 
 @bot.command()
 async def cat(ctx):
-   
+    await ctx.send('にゃーん')
     await ctx.send("https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif")
 
 bot.run(token)
