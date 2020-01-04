@@ -11,13 +11,13 @@ token = os.environ['DISCORD_BOT_TOKEN']
 @bot.event
 async def on_ready():
     print('bonjin neko bot is start!')
-    print('bonjin neko bot python edition in development')
+    print('Logind as\n'+bot.user.name+'\n'+bot.user.id)
 
 @bot.event
 async def on_command_error(ctx, error):
     orig_error = getattr(error, "問題が発生しました", error)
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
-    await ctx.send(error_msg)
+    print(error_msg)
 
 
 
