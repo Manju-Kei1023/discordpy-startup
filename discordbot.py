@@ -13,9 +13,16 @@ async def on_command_error(ctx, error):
     await ctx.send(error_msg)
 
 
+
 @bot.command()
 async def say(ctx, *args):
     await ctx.send('{}'.format(join(args)))
+
+@client.event
+async def on_message(message):
+
+    if message.author == client.user.id
+        return
 
 
 bot.run(token)
