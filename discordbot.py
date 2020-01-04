@@ -15,10 +15,6 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
-    args = message.content[len(prefix):].split(' ')
-    if message.content.startsWith(prefix):
-        if args[0] == 'help':
-            await message.channel.send('開発中')
         
         
 
