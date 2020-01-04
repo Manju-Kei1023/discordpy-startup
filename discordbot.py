@@ -1,24 +1,36 @@
 import discord
+from discord.ext import commands
 import os
 
-client = discord.Client()
+bot = commands.Bot(command_prefix='b!')
 token = os.environ['DISCORD_BOT_TOKEN']
 
-@client.event
+@bot.event
 async def on_ready():
-    print('bonjin neko bot is starting')
-    print('Logging as Name:'+str(client.user.name)+'\nID:'+str(client.user.id))
-    prefix = 'b!'
-    args = []
+    print('bonjin neko bot is start!')
+    print('Logind as\n'+str(bot.user.name)+'\n'+str(bot.user.id))
 
-@client.event
+@bot.listen()
 async def on_message(message):
-    if message.author == client.user:
+    if message.author.bot:
         return
 
     if '草' in message.content:
         await message.channel.send('草')
-        
-        
 
-client.run(token)
+
+
+@bot.command()
+async def say(ctx, *args):
+    await ctx.send('{}'.format(' '.join(args)))
+
+@bot.command()
+async def cat(ctx):
+    await ctx.send('にゃーん')
+    await ctx.send("https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif")
+
+@bot.command()
+async def mydata(ctx):
+    await ctx.send('Your ID Here:'+str(ctx.author.id))
+
+bot.run(token)
