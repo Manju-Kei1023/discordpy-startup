@@ -15,10 +15,10 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.author.id == bot.user.id:
+    if message.author.bot
         return
     if '草' in message.content:
-        message.send('草')
+        await message.channel.send('草')
 
 @bot.event
 async def on_command_error(ctx, error):
