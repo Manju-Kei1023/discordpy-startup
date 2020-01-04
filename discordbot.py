@@ -3,7 +3,7 @@ from discord.ext import commands
 import os
 import traceback
 
-#client = discord.Client()
+client = discord.Client()
 
 bot = commands.Bot(command_prefix='b!')
 token = os.environ['DISCORD_BOT_TOKEN']
