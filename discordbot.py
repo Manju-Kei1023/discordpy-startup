@@ -3,8 +3,6 @@ from discord.ext import commands
 import os
 import traceback
 
-client = discord.Client()
-
 bot = commands.Bot(command_prefix='b!')
 token = os.environ['DISCORD_BOT_TOKEN']
 
@@ -20,12 +18,5 @@ async def on_command_error(ctx, error):
 @bot.command()
 async def say(ctx, *args):
     await ctx.send('{}'.format(join(args)))
-
-@client.event
-async def on_message(message):
-
-    if message.content.startsWith == '$hello':
-        await message.channel.send('Hello!')
-
 
 bot.run(token)
