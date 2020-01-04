@@ -29,6 +29,7 @@ async def say(ctx, *args):
 async def cat(ctx):
     await ctx.send('にゃーん')
     await ctx.send("https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif")
+
 @bot.command()
 async def mydata(ctx):
     await ctx.send(message.author.id)
