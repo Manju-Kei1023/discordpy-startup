@@ -18,8 +18,9 @@ async def on_command_error(ctx, error):
 @bot.command()
 async def say(ctx, *args):
     await ctx.send('{}'.format(join(args)))
-@bot.command()
+@commands.command
 async def help(ctx):
     await ctx.send('ごめんなさい\nまだ未実装です🙇')
+bot.add_command(help)
 
 bot.run(token)
