@@ -32,6 +32,6 @@ async def cat(ctx):
 
 @bot.command()
 async def mydata(ctx):
-    await ctx.send(message.author.id)
+    await ctx.send('Your ID Here:'+ctx.author.id)
 
 bot.run(token)
