@@ -15,7 +15,7 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.author.bot
+    if message.author.bot:
         return
     if '草' in message.content:
         await message.channel.send('草')
