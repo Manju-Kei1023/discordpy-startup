@@ -18,7 +18,7 @@ async def on_message(message):
     if message.author.id == bot.user.id:
         return
     if '草' in message.content:
-        message.channel.send('草')
+        message.send('草')
 
 @bot.event
 async def on_command_error(ctx, error):
