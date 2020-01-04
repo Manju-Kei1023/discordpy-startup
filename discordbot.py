@@ -18,12 +18,6 @@ async def on_message(message):
     if '草' in message.content:
         await message.channel.send('草')
 
-@bot.event
-async def on_command_error(ctx, error):
-    orig_error = getattr(error, "問題が発生しました", error)
-    error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
-    print(error_msg)
-
 
 
 @bot.command()
