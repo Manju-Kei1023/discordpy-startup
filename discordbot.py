@@ -11,7 +11,7 @@ async def on_ready():
     print('bonjin neko bot is start!')
     print('Logind as\n'+str(bot.user.name)+'\n'+str(bot.user.id))
 
-@bot.listen
+@bot.event
 async def on_message(message):
     if message.author.bot:
         return
