@@ -12,8 +12,9 @@ token = os.environ['DISCORD_BOT_TOKEN']
 async def on_ready():
     print('bonjin neko bot is start!')
     print('Logind as\n'+str(bot.user.name)+'\n'+str(bot.user.id))
-    client.global_list = []
+#    client.global_list = []
 
+"""
 @client.event
 async def on_message(message):
 
@@ -38,6 +39,7 @@ async def on_message(message):
     for webhook in client.global_list:
         if message.channel != webhook.channel:
             await webhook.send(content=message.content,username=message.author.name,avatar_url=message.author.avatar_url)
+"""
 
 @client.event
 async def on_message(message):
