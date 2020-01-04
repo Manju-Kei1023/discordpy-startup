@@ -6,7 +6,7 @@ import traceback
 bot = commands.Bot(command_prefix='b!')
 token = os.environ['DISCORD_BOT_TOKEN']
 
-@client.event
+@bot.event
 async def on_ready():
     print('bonjin neko bot is start!')
 
