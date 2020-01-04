@@ -25,7 +25,7 @@ async def on_command_error(ctx, error):
 async def say(ctx, *args):
     await ctx.send('{}'.format(' '.join(args)))
 
-@bot.cmmands()
+@bot.command()
 async def cat(ctx):
     await ctx.send("https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif")
 
