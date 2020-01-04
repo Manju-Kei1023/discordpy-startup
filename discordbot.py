@@ -13,6 +13,13 @@ async def on_ready():
     print('bonjin neko bot is start!')
     print('Logind as\n'+str(bot.user.name)+'\n'+str(bot.user.id))
 
+@client.event
+async def on_message(message):
+    if message.author.id == client.user.id:
+        return
+    if '草' in message.content:
+        message.channel.send('草')
+
 @bot.event
 async def on_command_error(ctx, error):
     orig_error = getattr(error, "問題が発生しました", error)
