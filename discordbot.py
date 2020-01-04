@@ -8,7 +8,7 @@ token = os.environ['DISCORD_BOT_TOKEN']
 
 @bot.event
 async def on_ready():
-    print('bonjin neko bot is start!'):
+    print('bonjin neko bot is start!')
     await message.channel.get('662620493970669579').send('起動しました')
 
 @bot.event
