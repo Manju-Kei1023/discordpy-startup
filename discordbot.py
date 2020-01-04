@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import os
 
-bot = commands.Bot(command_prefix='b!' ,help_command=None ,Activity=discord.Game(name='凡人ねこBot'))
+bot = commands.Bot(command_prefix='b!' ,help_command=None)
 token = os.environ['DISCORD_BOT_TOKEN']
 
 @bot.event
