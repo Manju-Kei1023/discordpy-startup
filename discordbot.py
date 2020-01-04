@@ -23,6 +23,8 @@ async def on_message(message):
 
     if message.author == client.user.id
         return
+    if message.content.startsWith == '$hello':
+        await message.channel.send('Hello!')
 
 
 bot.run(token)
