@@ -24,7 +24,7 @@ async def say(ctx, *args):
 @client.event
 async def on_message(message):
 
-    if message.author == client.user.id
+    if message.author == message.guild.me
         return
     if message.content.startsWith == '$hello':
         await message.channel.send('Hello!')
