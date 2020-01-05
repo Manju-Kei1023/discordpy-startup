@@ -9,6 +9,7 @@ token = os.environ['DISCORD_BOT_TOKEN']
 async def on_ready():
     print('bonjin neko bot is start!')
     print('Logind as\n'+str(bot.user.name)+'\n'+str(bot.user.id))
+    bot.global_list = []
 
 @bot.listen()
 async def on_message(message):
@@ -37,5 +38,25 @@ async def mydata(ctx):
 async def help(ctx, cmd):
     if cmd == '':
         ctx.send('全ての項目を表示')
+@bot.listen()
+async def on_message(message):
+
+    if message.author == message.guild.me:
+        return
+
+    if message.content == "!global":
+        if message.channel not in bot.global_list:
+            bot.global_list.append(message.channel)
+            await message.channel.send("グローバルチャットのチャンネルに登録しました。")
+        else:
+            await message.channel.send("既に登録されています。")
+        return
+
+    embed = discord.Embed(title=f"サーバー: {message.guild.name}",description=message.clean_content )
+    embed.set_author(name=message.author.name,icon_url=message.author.avatar_url)
+
+    for ch in bot.global_list:
+        if message.channel != ch: 
+            await ch.send(embed=embed)
     
 bot.run(token)
