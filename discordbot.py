@@ -33,5 +33,9 @@ async def cat(ctx):
 @bot.command()
 async def mydata(ctx):
     await ctx.send('Your ID Here:'+str(ctx.author.id))
-
+@bot.command()
+async def help(ctx, cmd):
+    if cmd == '':
+        ctx.send('全ての項目を表示')
+    
 bot.run(token)
