@@ -17,7 +17,8 @@ async def on_message(message):
 
     if '草' in message.content:
         await message.channel.send('草')
-
+    if message.content.endswith('マ？'):
+        await message.channel.send('マ')
 
 
 @bot.command()
